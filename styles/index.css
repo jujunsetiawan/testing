@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    /* Mobile: logo dan nav bertumpuk */
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navigasi {
+    display: flex;
+    flex-direction: column;
+    /* Mobile: link navigasi bertumpuk */
+    gap: 8px;
+}
+
+.navigasi a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 0;
+}
+
+/* --- Konten Utama --- */
+.wadah-konten {
+    padding: 24px 16px;
+}
+
+.daftar-artikel {
+    display: flex;
+    flex-direction: column;
+    /* Mobile: satu kolom vertikal */
+    gap: 16px;
+}
+
+.kartu-artikel {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.kartu-artikel h2 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   Breakpoint: Tablet ke atas (≥ 768px)
+   ============================================ */
+@media screen and (min-width: 768px) {
+
+    /* Header: logo dan navigasi berdampingan */
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Navigasi: link berjajar horizontal */
+    .navigasi {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    /* Artikel: dua kolom */
+    .daftar-artikel {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .kartu-artikel {
+        flex: 1 1 calc(50% - 8px);
+        /* Dua kolom dengan jarak */
+    }
+}
+
+/* ============================================
+   Breakpoint: Desktop ke atas (≥ 992px)
+   ============================================ */
+@media screen and (min-width: 992px) {
+
+    /* Konten dibatasi lebar maksimumnya dan dicentrasi */
+    .wadah-konten {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 24px;
+    }
+
+    /* Artikel: tiga kolom */
+    .kartu-artikel {
+        flex: 1 1 calc(33.333% - 11px);
+        /* Tiga kolom dengan jarak */
+    }
+}
